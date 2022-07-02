@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class PokemonComponent implements OnInit {
 
-  name!: string
+  name!: string;
+  urlPokemon!: string;
 
   constructor(private pokemonService: PokemonService) { }
 
@@ -17,8 +19,8 @@ export class PokemonComponent implements OnInit {
   }
 
   buscar(){
-    this.pokemonService.obtenerPokemon(this.name).subscribe(data => {
-      console.log(data)
+    this.pokemonService.obtenerPokemon(this.name).subscribe((data:any) => {
+      this.urlPokemon = data.sprites.front_default
     })
   }
 

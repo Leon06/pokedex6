@@ -1,6 +1,11 @@
 <h3>Pokedex</h3>
 
-<p>Nombre o número</p>
-<input type="text" [(ngModel)]="name">
-<button (click)="buscar()">Buscar</button>
+<div class="container">
+    
+    <p>Nombre Del Pokemon</p>
+    <input type="text" [(ngModel)]="name">
+    <button (click)="buscar()">Buscar</button>
+    
+</div>
 
+<img src="{{urlPokemon}}" alt="">
