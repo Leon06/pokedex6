@@ -8,15 +8,16 @@ import { PokemonService } from '../services/pokemon.service';
 })
 export class PokemonComponent implements OnInit {
 
-  value!: string;
+  name!: string
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
+    //
   }
 
   buscar(){
-    this.pokemonService.obtenerPokemon(this.value).subscribe(data =>{
+    this.pokemonService.obtenerPokemon(this.name).subscribe(data => {
       console.log(data)
     })
   }
